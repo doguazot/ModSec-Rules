@@ -1,0 +1,10 @@
+SecRule REQUEST_HEADERS|ARGS "@detectSQLi" "id:10000,phase:2,deny,status:403,msg:'Potential SQL injection attack detected'"
+
+- SecRule: This directive defines a rule in ModSecurity.
+- ARGS: This variable represents the arguments (parameters) passed in the HTTP request.
+- "@detectSQLi": This is an operator that detects common SQL injection patterns in the request arguments.
+- id:10000: This is a unique identifier for the rule.
+- phase:2: This rule will be executed during the request analysis phase, which occurs after the request headers have been read.
+- deny: If the rule matches, the request will be denied.
+- status:403: The HTTP status code returned when the rule is triggered is set to 403 (Forbidden).
+- msg:'Potential SQL injection attack detected': This is the message that will be logged when the rule matches.
